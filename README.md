@@ -27,6 +27,7 @@ This project includes sections for **Home, About, Education, Projects, Contact, 
 ---
 
 ## 📂 Project Structure
+```
 personal-portfolio/
 │── public/
 │ ├── index.html
@@ -47,3 +48,4 @@ personal-portfolio/
 │── postcss.config.js
 │── package.json
 │── README.md
+```
