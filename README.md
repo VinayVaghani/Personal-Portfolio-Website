@@ -27,7 +27,6 @@ This project includes sections for **Home, About, Education, Projects, Contact, 
 ---
 
 ## 📂 Project Structure
-<<<<<<< HEAD
 =======
 ```
 >>>>>>> 76c33f71f84e85ff9bea9d62f9f7c02f827dea1f
@@ -55,4 +54,4 @@ personal-portfolio/
 =======
 │── README.md
 ```
->>>>>>> 76c33f71f84e85ff9bea9d62f9f7c02f827dea1f
+
