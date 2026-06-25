@@ -2,5 +2,176 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+/* ============================
+   Design Tokens (CSS Custom Properties)
+   ============================ */
+:root {
+  /* Light Mode Palette */
+  --color-bg-primary: #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-bg-card: #ffffff;
+  --color-bg-elevated: #ffffff;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+}
+
+.dark {
+  /* Dark Mode Palette — Deep navy-charcoal with vibrant accents */
+  --color-bg-primary: #0b1120;
+  --color-bg-secondary: #111827;
+  --color-bg-card: #1a2332;
+  --color-bg-elevated: #1e293b;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-border: #2d3a4f;
+  --color-accent: #60a5fa;
+  --color-accent-hover: #93c5fd;
+}
+
+/* ============================
+   Base Styles
+   ============================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* ============================
+   Custom Scrollbar
+   ============================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3b4a63;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5b6b82;
+}
+
+/* ============================
+   Custom Micro-Animations
+   ============================ */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(59, 130, 246, 0.25);
+  }
+}
+
+.dark .animate-glow {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* ============================
+   Smooth Theme Transitions
+   ============================ */
+body, section, nav, footer, div, p, h1, h2, h3, h4, h5, h6, span, a, button, input, textarea {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================
+   Eye-friendly Dark Mode Image Adjustment
+   ============================ */
+.dark img {
+  filter: brightness(0.88) contrast(1.02);
+  transition: filter 300ms ease-in-out;
+}
+
+/* ============================
+   Selection Styling
+   ============================ */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: inherit;
+}
+
+.dark ::selection {
+  background: rgba(96, 165, 250, 0.35);
+}
